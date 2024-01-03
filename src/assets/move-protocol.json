@@ -1,0 +1,46 @@
+{
+    "protocol": "https://didcomm.org/move-web5",
+    "published": true,
+    "types": {
+        "users": {
+            "schema": "https://didcomm.org/move-web5/schemas/users.json",
+            "dataFormats": [
+                "application/json"
+            ]
+        },
+        "rides": {
+            "schema": "https://didcomm.org/move-web5/schemas/rides.json",
+            "dataFormats": [
+                "application/json"
+            ]
+        }
+    },
+    "structure": {
+        "users": {
+            "$actions": [
+                {
+                    "who": "anyone",
+                    "can": "read"
+                },
+                {
+                    "who": "anyone",
+                    "can": "write"
+                }
+            ],
+            "rides": {
+                "$actions": [
+                    {
+                        "who": "anyone",
+                        "of":"users",
+                        "can": "read"
+                    },
+                    {
+                        "who": "anyone",
+                        "of":"users",
+                        "can": "write"
+                    }                                                      
+                ]
+            }
+        }
+    }
+}
